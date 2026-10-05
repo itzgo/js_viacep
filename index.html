@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Endereço - CEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Consultar Endereço</h2>
+        <p class="subtitle">Digite o CEP para buscar a localização</p>
+
+        <form id="form-endereco" onsubmit="event.preventDefault();">
+            <div class="input-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" placeholder="00000-000" maxlength="9" autocomplete="off">
+                <span id="mensagem-erro" class="mensagem-erro"></span>
+            </div>
+
+            <div class="input-group">
+                <label for="logradouro">Logradouro / Rua</label>
+                <input type="text" id="logradouro" placeholder="Ex: Av. Beira Mar" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Ex: Meireles" readonly>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="localidade">Cidade</label>
+                    <input type="text" id="localidade" placeholder="Ex: Fortaleza" readonly>
+                </div>
+
+                <div class="input-group state-group">
+                    <label for="estado">Estado (UF)</label>
+                    <input type="text" id="estado" placeholder="CE" readonly>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

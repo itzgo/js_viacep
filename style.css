@@ -1,0 +1,121 @@
+:root {
+    --primary: #0284c7;       /* Azul Glacial Vivo */
+    --primary-hover: #0369a1; /* Azul Glacial Escuro */
+    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-color: #0f172a;     /* Azul escuro quase preto */
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --input-bg: #f8fafc;
+    --error-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-gradient);
+    padding: 20px;
+}
+
+/* Card central com efeito de vidro frosted */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.15),
+                0 8px 10px -6px rgba(2, 132, 199, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+h2 {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+/* Campos do Formulário */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+.state-group {
+    max-width: 90px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* Destaque para o input interativo do CEP */
+#cep {
+    background-color: #ffffff;
+    border-color: #93c5fd;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#cep:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+}
+
+/* Estilo para campos somente leitura (endereço retornado) */
+input[readonly] {
+    background-color: #f1f5f9;
+    color: #475569;
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+}
+
+/* Mensagem de Erro */
+.mensagem-erro {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    min-height: 18px;
+}
