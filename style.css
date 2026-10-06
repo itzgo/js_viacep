@@ -1,121 +1,83 @@
-:root {
-    --primary: #0284c7;       /* Azul Glacial Vivo */
-    --primary-hover: #0369a1; /* Azul Glacial Escuro */
-    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --text-color: #0f172a;     /* Azul escuro quase preto */
-    --text-muted: #64748b;
-    --border-color: #cbd5e1;
-    --input-bg: #f8fafc;
-    --error-color: #ef4444;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-}
-
+/* Configuração do fundo geral com o mapa do Brasil */
 body {
-    min-height: 100vh;
+    background-image: url('assests/braBG.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--bg-gradient);
+    min-height: 100vh;
     padding: 20px;
+    gap: 20px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
 }
 
-/* Card central com efeito de vidro frosted */
+/* Card com efeito Vitrificado Azul (Glassmorphism) */
 .card {
-    background: var(--card-bg);
+    /* Fundo azul escuro translúcido */
+    background: rgba(10, 25, 50, 0.6); 
+    
+    /* Efeito de desfoque (vidro borrado) */
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Borda suave azul-ciano */
+    border: 1px solid rgba(0, 229, 255, 0.25);
     border-radius: 16px;
-    padding: 32px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    
+    padding: 25px;
     width: 100%;
-    max-width: 440px;
-    box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.15),
-                0 8px 10px -6px rgba(2, 132, 199, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    max-width: 480px;
+    color: #ffffff;
 }
 
 h2 {
-    color: var(--text-color);
-    font-size: 1.6rem;
-    font-weight: 700;
+    color: #00e5ff; /* Azul cyan destacado */
     margin-bottom: 6px;
 }
 
 .subtitle {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 24px;
-}
-
-/* Campos do Formulário */
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-}
-
-.input-row {
-    display: flex;
-    gap: 12px;
-}
-
-.input-row .input-group {
-    flex: 1;
-}
-
-.state-group {
-    max-width: 90px;
+    color: #b0bec5;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
 }
 
 label {
+    color: #e0f7fa;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #334155;
     margin-bottom: 6px;
 }
 
+/* Estilização dos campos/inputs */
 input {
-    width: 100%;
-    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #ffffff;
     font-size: 0.95rem;
-    border: 1.5px solid var(--border-color);
-    border-radius: 10px;
-    background-color: var(--input-bg);
-    color: var(--text-color);
     outline: none;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
 }
 
-/* Destaque para o input interativo do CEP */
-#cep {
-    background-color: #ffffff;
-    border-color: #93c5fd;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
 }
 
-#cep:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
 }
 
-/* Estilo para campos somente leitura (endereço retornado) */
 input[readonly] {
-    background-color: #f1f5f9;
-    color: #475569;
-    cursor: not-allowed;
-    border-color: #e2e8f0;
-}
-
-/* Mensagem de Erro */
-.mensagem-erro {
-    color: var(--error-color);
-    font-size: 0.8rem;
-    margin-top: 4px;
-    min-height: 18px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #b0bec5;
 }
